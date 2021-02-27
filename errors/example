@@ -1,0 +1,11 @@
+     {/*   <Input style={{ padding: 10, marginTop: 5 }}
+                    leftIcon={{ type: 'font-awesome', name: 'user' }}
+                    placeholder='Mail'
+                    onChangeText={value => setMail(value)}
+                />
+                <Input style={{ padding: 10 }}
+                    leftIcon={{type:'font-awesome', name:'lock'}}
+                    placeholder='Password'
+                    onChangeText={value => setPassword(value)}
+                />
+*/}
