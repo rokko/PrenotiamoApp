@@ -9,3 +9,35 @@
                     onChangeText={value => setPassword(value)}
                 />
 */}
+
+
+ <Input style={{ padding: 10, marginTop: 5 }}
+                    leftIcon={{ type: 'font-awesome', name: 'user' }}
+                    placeholder='Nome'
+                    onChangeText={value => setNome(value)}
+                />
+                <Input style={{ padding: 10 }}
+                    leftIcon={{ type: 'font-awesome', name: 'user' }}
+                    placeholder='Cognome'
+                    onChangeText={value => setCognome(value)}
+                />
+                <Input style={{ padding: 10 }}
+                    leftIcon={{ type: 'font-awesome', name: 'envelope' }}
+                    placeholder='Mail'
+                    onChangeText={value => setMail(value)}
+                />
+                <Input style={{ padding: 10 }}
+                    leftIcon={{ type: 'font-awesome', name: 'lock' }}
+                    placeholder='Password'
+                    onChangeText={value => setPassword(value)}
+                />
+                <Input style={{ padding: 10 }}
+                    leftIcon={{ type: 'font-awesome', name: 'lock' }}
+                    placeholder='Confema Password'
+                    onChangeText={value => setPassword(value)}
+                />
+                <Input style={{ padding: 10 }}
+                    leftIcon={{ type: 'font-awesome', name: 'mobile' }}
+                    placeholder='Cellulare'
+                    onChangeText={value => setTelephonNumber(value)}
+                />
