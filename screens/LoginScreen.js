@@ -1,30 +1,29 @@
-import React, { useState, useForm, createRef  } from 'react'
+import React, { useState, createRef  } from 'react'
 import { View, StyleSheet, TextInput } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Input, Button , Text} from 'react-native-elements';
 import Alert from '../errors/Alert'
 import Form from '../components/Form'
+import useForm from '../hooks/useForm'
 
 const inputs = [
-    { label: 'Username', name: 'username_email', ref: createRef() , icon:'user' },
+    { label: 'Username', name: 'mail', ref: createRef() , icon:'user' },
     { label: 'Password', name: 'password', ref: createRef(), secureTextEntry: true, icon:'lock' },
   ]
 export default function LoginScreen() {
     const requiredInputs = ['username_email', 'password']
-
-    const [data, setFormData] = useState('')
-    const [mail, setMail] = useState('leocaricola@gmail.com')
-    const [password, setPassword] = useState('leolino11')
+    const [data, setFormData] = useForm(requiredInputs)
     const [messageOpen, setMessageOpen] = useState(false)
     const [error, setError] = useState('')
 
     const submitlogin = () => {
+        console.log(data.values)
         fetch(('https://prenotato.herokuapp.com/User/Login'), {
             headers: {
                 'Content-Type': 'application/json',
 
             },
-            body: JSON.stringify({ mail, password }),
+            body: JSON.stringify(data.values),
             method: 'POST'
 
         })
@@ -32,8 +31,12 @@ export default function LoginScreen() {
             .then(rest => {
                 if (rest.isCorrect === false) {
                     setMessageOpen(true)
-                    setError(rest.message)}                
-                })
+                    setError(rest.message)} else {
+                        console.log(rest)
+                    }  
+                           
+                }
+            )    
                 
             
     }

@@ -14,7 +14,13 @@ export default function Form({ inputs, updateInputValue }) {
                 ref={ref}
                 label={label}
                 blurOnSubmit={!(index < inputs.length - 1)}
-                onTextChange={(text) => updateInputValue(name, text)}
+                onChangeText={(text) => {
+
+                  console.log(text)
+                  updateInputValue(name, text)
+                }
+                }
+
                 onSubmitEditing={() => {
                   const nextInput = inputs[index + 1]
 
