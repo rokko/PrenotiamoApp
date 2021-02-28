@@ -1,7 +1,6 @@
 import React, { useState, createRef  } from 'react'
-import { View, StyleSheet, TextInput } from 'react-native'
-import Icon from 'react-native-vector-icons/FontAwesome';
-import { Input, Button , Text} from 'react-native-elements';
+import { View, StyleSheet} from 'react-native'
+import { Button , Text} from 'react-native-elements';
 import Alert from '../errors/Alert'
 import Form from '../components/Form'
 import useForm from '../hooks/useForm'
@@ -44,7 +43,7 @@ export default function LoginScreen() {
     return (
         <View style={{ flex: 1, padding: 10, backgroundColor: '#14213d', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <Alert open={messageOpen} message={error} onClose={() => setMessageOpen()} typology={error ? 'danger' : 'success'} />
-            <View style={{ backgroundColor: '#ffffff', height: 300, width: 300, borderRadius: '30%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <View style={{ backgroundColor: '#ffffff', height: 300, width: 300, borderRadius: 30, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                <Form inputs={inputs} updateInputValue={setFormData} />          
                 <Button style={{ width: 100 }} title='Login' onPress={() => submitlogin()}> {'Login'} </Button>
                 <Text style={{marginTop : 6}}> Non sei ancora registrato? Clicca qui</Text>
