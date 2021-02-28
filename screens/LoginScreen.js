@@ -4,6 +4,7 @@ import { Button , Text} from 'react-native-elements';
 import Alert from '../errors/Alert'
 import Form from '../components/Form'
 import useForm from '../hooks/useForm'
+import { rootNavigation } from '../utility/navigation.js'
 
 const inputs = [
     { label: 'Username', name: 'mail', ref: createRef() , icon:'user' },
@@ -32,6 +33,7 @@ export default function LoginScreen() {
                     setMessageOpen(true)
                     setError(rest.message)} else {
                         console.log(rest)
+                        rootNavigation.current.navigate('MainNavigator')
                     }  
                            
                 }
